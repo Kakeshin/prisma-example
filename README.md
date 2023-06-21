@@ -12,15 +12,11 @@
   - [環境](#環境)
     - [推奨 VSCode 拡張機能](#推奨-vscode-拡張機能)
   - [事前準備](#事前準備)
-  - [ディレクトリ構成](#ディレクトリ構成)
   - [コマンドについて](#コマンドについて)
-  - [ER 図について](#er-図について)
   - [開発環境構築について](#開発環境構築について)
     - [手順](#手順)
 
 ## 概要
-
-I-FACE 用のデータベース管理用のリポジトリです。
 
 Node.js の [Prisma](https://www.prisma.io/) を用いて、 MySQL のテーブル管理を行います。<br>
 本リポジトリで扱っている機能は以下となります。
@@ -38,19 +34,15 @@ Node.js の [Prisma](https://www.prisma.io/) を用いて、 MySQL のテーブ�
 ## 環境
 
 - Node.js
-  - 18 系を採用 (2023/4 時点で 最新のLTSである為)
-    - ⚠️ 18 のサポート期間は 2025/4 まで
-    - 🔖 Node.js 20 が 2023/10 からLTSに入る為、その辺りの時期に Node.js 20 へ移行を検討してください。
+  - 20 系を採用
 
 ### 推奨 VSCode 拡張機能
 
 |#|項目|備考|
 |-|-|-|
-|1|[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)|ESLintで検出された警告をVSCode上で表示してくれる|
-|2|[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)|コードを自動整形してくれるプラグイン|
-|3|[vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)|VSCodeのファイルツリーに拡張子に合ったアイコンを表示してくれる|
-|4|[Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)|VSCode上でDockerコンテナを管理できるようにしてくれる|
-|5|[Prisma](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma)|Prismaスキームのシンタックスハイライトやフォーマットをサポートしてくれる|
+|1|[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)|コードを自動整形してくれるプラグイン|
+|2|[Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)|VSCode上でDockerコンテナを管理できるようにしてくれる|
+|3|[Prisma](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma)|Prismaスキームのシンタックスハイライトやフォーマットをサポートしてくれる|
 
 ## 事前準備
 
@@ -74,24 +66,6 @@ yarn install
 ```bash
 $ docker-compose -v
 Docker Compose version v2.15.1
-```
-
-## ディレクトリ構成
-
-```
-.
-├── docker-compose.yml      ... ローカル環境用のDockerコンテナ定義
-├── mysql
-│   └── conf
-│
-├── erDiagram.svg           ... ER 図
-│
-├── prisma
-│   ├── migrations          ... マイグレーションファイル（migrateコマンド実行すると自動生成される）
-│   ├── schema.prisma       ... スキームファイル
-│   └── seeds               ... シーダーファイル
-└── src
-    └── client              ... prisma が自動生成するファイル
 ```
 
 ## コマンドについて
@@ -133,20 +107,6 @@ Docker Compose version v2.15.1
     ```
 
 詳細は `package.json` の `scripts` を参照してください。
-
-## ER 図について
-
-自動生成された ER 図はこちらをご参照してください。
-
-- [プレビュー](erDiagram.svg)
-
-GitLab のバージョンによっては正常にプレビューが保証できない為、<br>
-VSCode で開くことを推奨します。
-
-また ER 図は mermaid の erDiagram を用いて表現しております。<br>
-VSCode でプレビュー表示する場合は、以下の拡張機能をインストールしてください。
-
-- [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
 
 ## 開発環境構築について
 
