@@ -1,0 +1,22 @@
+{
+  "private": false,
+  "name": "prisma-example",
+  "version": "1.0.0",
+  "main": "./src/client/index.js",
+  "repository": "git@github.com:Kakeshin/prisma-example.git",
+  "author": "Kakeshin <kakeshin.engineer@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "generate": "rm -rf ./src/client && prisma generate",
+    "migrate": "prisma migrate dev",
+    "seeds": "ts-node -r tsconfig-paths/register prisma/seeds/index.ts"
+  },
+  "devDependencies": {
+    "@prisma/client": "^4.16.0",
+    "@types/node": "^20.3.1",
+    "prisma": "^4.16.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.3"
+  }
+}

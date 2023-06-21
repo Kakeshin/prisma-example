@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.0.32
+    container_name: ${DATABASE_NAME}
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: prisma-example
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - data-mysql-volume:/var/lib/mysql
+      - ./mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf
+volumes:
+  data-mysql-volume:
