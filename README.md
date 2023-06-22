@@ -109,16 +109,34 @@ Docker Compose version v2.15.1
 
 ### 手順
 
+1. `docker-compose.yml`を作成してください。
+
 1. 開発用のデータベースコンテナを起動します。
 
     ```bash
     docker-compose up -d
     ```
 
-1. 以下のコマンドを実行し、開発環境用の `.env` ファイルを作成してください。
+1. 以下のコマンドを実行し、`schema.prisma`を作成してください。
 
     ```bash
-    cp .env.local .env
+    npx prisma init
+    ```
+
+1. `.env`ファイルにDBの接続情報を入力してください。
+
+1. シーダー用のファイルを作成します。
+
+    ```
+    - prisma
+        └ seeds
+            └ index.ts
+    ```
+
+1. 自動生成させるファイルがないため以下のコマンドを実行します。
+
+    ```bash
+    yarn generate
     ```
 
 1. テーブルが存在しないのでマイグレーションを実行します。
@@ -127,12 +145,12 @@ Docker Compose version v2.15.1
     yarn migrate
     ```
 
-1. マスタ系テーブルにレコードがない為、シーダーを実行します。
+1. テーブルにレコードがない為、シーダーを実行します。
 
     ```bash
     yarn seeds
     ```
 
-1. MySQL のクライアントで接続し、マスタ系テーブルに初期値が入っていれば完了です。
+1. MySQL のクライアントで接続し、テーブルに初期値が入っていれば完了です。
 
    - 接続情報は [こちら](./docker-compose.yml) を参照してください。
