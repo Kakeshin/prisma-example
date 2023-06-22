@@ -88,12 +88,6 @@ Docker Compose version v2.15.1
     yarn seeds
     ```
 
-- ESLint
-
-    ```bash
-    yarn lint
-    ```
-
 - コンテナ起動
 
     ```bash
