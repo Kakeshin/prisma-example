@@ -1,21 +1,5 @@
 # prisma-example
 
-![](https://img.shields.io/badge/Node.js-20.x-339933)
-![](https://img.shields.io/badge/TypeScript-5.x-2C8EBB)
-![](https://img.shields.io/badge/Prisma-4.x-2D3748)
-
-## 目次
-
-- [prisma-example](#prisma-example)
-  - [目次](#目次)
-  - [概要](#概要)
-  - [環境](#環境)
-    - [推奨 VSCode 拡張機能](#推奨-vscode-拡張機能)
-  - [事前準備](#事前準備)
-  - [コマンドについて](#コマンドについて)
-  - [開発環境構築について](#開発環境構築について)
-    - [手順](#手順)
-
 ## 概要
 
 Node.js の [Prisma](https://www.prisma.io/) を用いて、 MySQL のテーブル管理を行います。<br>
@@ -34,15 +18,7 @@ Node.js の [Prisma](https://www.prisma.io/) を用いて、 MySQL のテーブ�
 ## 環境
 
 - Node.js
-  - 20 系を採用
-
-### 推奨 VSCode 拡張機能
-
-|#|項目|備考|
-|-|-|-|
-|1|[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)|コードを自動整形してくれるプラグイン|
-|2|[Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)|VSCode上でDockerコンテナを管理できるようにしてくれる|
-|3|[Prisma](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma)|Prismaスキームのシンタックスハイライトやフォーマットをサポートしてくれる|
+  - 20 系
 
 ## 事前準備
 
