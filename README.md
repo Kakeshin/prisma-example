@@ -12,8 +12,6 @@ Node.js の [Prisma](https://www.prisma.io/) を用いて、 MySQL のテーブ�
 - Prisma クライアントのコード自動生成
   - TypeScript 向けの型定義
   - 専用のクエリビルダー
-- Private の NPM モジュール化
-  - Prisma が自動出力する型定義のファイルを API のリポジトリで参照する想定です。
 
 ## 環境
 
